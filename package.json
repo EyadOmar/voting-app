@@ -8,11 +8,11 @@
     "client"
   ],
   "scripts": {
-    "dev:server": "npm run start -w server",
-    "dev:client": "npm run dev -w client",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run start:dev --workspace=server",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "lint:server": "npm run lint -w server",
-    "lint:client": "npm run lint -w client",
+    "lint:server": "npm run lint --workspace=server",
+    "lint:client": "npm run lint --workspace=client",
     "lint": "npm run lint:server && npm run lint:client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +30,7 @@
   "author": "Eyad Omar",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "wait-on": "^8.0.3"
   }
 }
